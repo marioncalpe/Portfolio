@@ -1,0 +1,12 @@
+<div class="modal">
+  <div class="modal-content" #modalContent>
+    <div class="modal-desc">
+      <div class="close-btn" (click)="close()">&times;</div>
+      <div class="date">{{ date }}</div>
+    </div>
+    <ng-content></ng-content>
+    <div class="svg">
+      <img src="assets/background2.png" class="backcircuit" alt="" />
+    </div>
+  </div>
+</div>
