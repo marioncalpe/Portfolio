@@ -1,59 +1,140 @@
-# Portfolio
+# 🎨 Portfolio — Marion Calpena
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+Portfolio personnel développé avec **Angular 21** (standalone components), présentant mes projets, compétences et expériences en tant que développeuse Front-end & Designer UX/UI.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Stack technique
+
+- **Framework** : Angular 19 (standalone components, nouvelle syntaxe `@if` / `@for`)
+- **Langage** : TypeScript
+- **Style** : SCSS
+- **Icônes** : [Boxicons](https://boxicons.com/)
+- **Typographie** : Pacifico (Google Fonts)
+
+---
+
+## 📁 Structure du projet
+
+```
+portfolio/
+├── public/                         # Assets statiques (images, GIFs, favicon)
+│   ├── favicon.ico
+│   ├── background2.png
+│   ├── classroom.png
+│   ├── monify.png
+│   ├── IMG_20230617_202924.jpg
+│   └── ...
+├── src/
+│   ├── app/
+│   │   ├── modal/                  # Composant modal réutilisable
+│   │   │   ├── modal.component.ts
+│   │   │   ├── modal.component.html
+│   │   │   └── modal.component.scss
+│   │   ├── app.ts                  # Composant racine
+│   │   ├── app.html                # Template principal
+│   │   ├── app.scss                # Styles du composant
+│   │   ├── app.config.ts           # Configuration de l'application
+│   │   └── app.routes.ts           # Routing
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.scss                 # Styles globaux
+├── angular.json
+├── package.json
+└── tsconfig.json
+```
+
+---
+
+## 📦 Installation
+
+### Prérequis
+
+- [Node.js](https://nodejs.org/) >= 18
+- [Angular CLI](https://angular.io/cli) >= 19
+
+```bash
+npm install -g @angular/cli
+```
+
+### Cloner et installer
+
+```bash
+git clone https://github.com/marioncalpe/portfolio.git
+cd portfolio
+npm install
+```
+
+---
+
+## ▶️ Lancer le projet
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Ouvrir [http://localhost:4200](http://localhost:4200) dans le navigateur.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## 🏗️ Build de production
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Les fichiers compilés se trouvent dans le dossier `dist/`.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🗂️ Sections du portfolio
 
-```bash
-ng test
+| Section | Description |
+|---|---|
+| **Hero** | Présentation, photo, bio et liens vers les réseaux sociaux |
+| **Projets** | Creadoc Classroom, Monify V.1 (avec modals de détail) |
+| **Technologies** | Stack maîtrisée : SCSS, Angular, TypeScript, MySQL, JS, PHP, Git... |
+| **Expériences** | Timeline des formations et expériences professionnelles |
+| **Contact** | Formulaire de contact |
+
+---
+
+## 🖼️ Assets
+
+Toutes les images et GIFs doivent être placés dans le dossier **`public/`** à la racine du projet.
+
+> ⚠️ Angular 19 sert les fichiers du dossier `public/` directement à la racine de l'URL.  
+> Un fichier `public/monimage.jpg` est accessible via `src="monimage.jpg"` dans les templates.
+
+---
+
+## 🧩 Composant Modal
+
+Le composant `<modal>` est standalone et réutilisable. Il accepte les propriétés suivantes :
+
+| Propriété | Type | Description |
+|---|---|---|
+| `date` | `string` | Date affichée dans l'en-tête de la modal |
+| `onClose` | `EventEmitter<void>` | Événement émis à la fermeture |
+
+**Exemple d'utilisation :**
+
+```html
+@if (modal.monProjet.status) {
+  <modal [date]="'Janvier 2024'" (onClose)="modal.monProjet.status = false">
+    <div>Contenu de la modal...</div>
+  </modal>
+}
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📬 Contact
 
-```bash
-ng e2e
-```
+- **GitHub** : [github.com/marioncalpe](https://github.com/marioncalpe)
+- **LinkedIn** : [linkedin.com/in/marion-calpena-90a930187](https://www.linkedin.com/in/marion-calpena-90a930187)
+- **Email** : marioncalpe2a@gmail.com
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*© Marion Calpena — Mis à jour en 2025*
