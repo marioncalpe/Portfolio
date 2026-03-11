@@ -1,8 +1,8 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'modal',
+  selector: 'app-modal',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './modal.component.html',
@@ -16,11 +16,14 @@ export class ModalComponent {
     this.onClose.emit();
   }
 
-  @HostListener('document:click', ['$event.target'])
-  onClick(target: EventTarget | null): void {
-    if (!(target instanceof HTMLElement)) return;
-    const modalContent = document.querySelector('.modal-content');
-    if (modalContent && !modalContent.contains(target)) {
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    this.close();
+  }
+
+  onBackdropClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('modal-backdrop')) {
       this.close();
     }
   }

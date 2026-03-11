@@ -1,41 +1,231 @@
-/* Global styles */
-html,
-body {
-  height: 100%;
+// ─── Variables SCSS ───────────────────────────────────
+$bg:     #080810;
+$bg2:    #0d0d18;
+$violet: #b3a0ff;
+$rose:   #f29dff;
+$bleu:   #9edbff;
+$text:   #e8e8f8;
+$muted:  #6b6b8a;
+$faint:  rgba(179, 160, 255, 0.07);
+$border: rgba(179, 160, 255, 0.1);
+$border-vis: rgba(179, 160, 255, 0.22);
+$grad:   linear-gradient(90deg, #f29dff, #b3a0ff, #9edbff);
+$grad45: linear-gradient(135deg, #f29dff, #b3a0ff, #9edbff);
+$grad-rv: linear-gradient(90deg, #f29dff, #b3a0ff);
+
+// Mixin gradient texte
+@mixin grad-text($g: $grad) {
+  background: $g;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Reset et styles de base
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #000;
+  background: $bg;
+  color: $text;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+// Curseur custom
+.cursor {
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $violet;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  transition: width 0.2s, height 0.2s, background 0.2s, top 0.2s, left 0.2s;
+  mix-blend-mode: screen;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(179, 160, 255, 0.4);
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform;
+  transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient($rose, $violet, $bleu);
+  border-radius: 2px;
+}
+
+// Sélection
+::selection {
+  background: rgba(179, 160, 255, 0.25);
   color: #fff;
+}
+
+// Bruit de fond
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+// Orbes
+.orbes {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
   overflow: hidden;
 }
 
-/* Custom scrollbar */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+.orbe {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.12;
+  animation: drift 28s ease-in-out infinite;
 }
 
-*::-webkit-scrollbar {
-  width: 4px;
+.o1 {
+  width: 700px;
+  height: 700px;
+  background: $violet;
+  top: -300px;
+  left: -300px;
+  animation-duration: 32s;
 }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
+.o2 {
+  width: 500px;
+  height: 500px;
+  background: $rose;
+  top: 40%;
+  right: -200px;
+  animation-duration: 38s;
+  animation-delay: -12s;
 }
 
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 20px;
+.o3 {
+  width: 400px;
+  height: 400px;
+  background: $bleu;
+  bottom: -150px;
+  left: 35%;
+  animation-duration: 26s;
+  animation-delay: -6s;
+}
+
+@keyframes drift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -25px) scale(1.04);
+  }
+  66% {
+    transform: translate(-18px, 18px) scale(0.97);
+  }
+}
+
+// Layout
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+// Sections génériques
+section {
+  padding: 120px 0;
+
+}
+
+.s-head {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 56px;
+}
+
+.s-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: $muted;
+  letter-spacing: 3px;
+}
+
+.s-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3.5vw, 40px);
+  letter-spacing: -1.5px;
+}
+
+.g {
+  @include grad-text($grad-rv);
+  font-family: 'Pacifico', cursive;
+}
+.pacifico{
+  font-family: 'Pacifico', cursive;
+  // font-size: 24px;
+  // color: $rose;
+}
+.s-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, $border, transparent);
+}
+
+// Responsive
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 80px 0;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
 }

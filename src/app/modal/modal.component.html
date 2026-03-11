@@ -1,12 +1,26 @@
-<div class="modal">
-  <div class="modal-content" #modalContent>
-    <div class="modal-desc">
-      <div class="close-btn" (click)="close()">&times;</div>
-      <div class="date">{{ date }}</div>
+<div class="modal-backdrop" (click)="onBackdropClick($event)">
+  <div class="modal-panel">
+
+    <!-- Header -->
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <div class="modal-date">{{ date }}</div>
+        <h2 class="modal-title">
+          <ng-content select="[modal-title]"></ng-content>
+        </h2>
+      </div>
+      <div class="modal-header-right">
+        <div class="modal-techs">
+          <ng-content select="[modal-techs]"></ng-content>
+        </div>
+        <button class="modal-close" (click)="close()">✕</button>
+      </div>
     </div>
-    <ng-content></ng-content>
-    <div class="svg">
-      <img src="assets/background2.png" class="backcircuit" alt="" />
+
+    <!-- Body -->
+    <div class="modal-body">
+      <ng-content select="[modal-body]"></ng-content>
     </div>
+
   </div>
 </div>

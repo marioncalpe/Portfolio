@@ -1,436 +1,336 @@
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+<!-- Curseur custom -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
 
-<div class="container">
-  <div class="content">
-
-    <!-- Logo mobile -->
-    <div class="logo-main">
-      <div class="m-red">Mc</div>
-    </div>
-
-    <!-- HERO -->
-    <div class="home" id="home">
-      <div class="avatar">
-        <img src="IMG_20230617_202924.jpg" alt="Marion Calpena" />
-      </div>
-      <div class="infos">
-        <div class="bio">Bienvenue, je suis</div>
-        <div class="name">Marion Calpena</div>
-
-        <!-- Desktop bio -->
-        <div class="biosuiteDesktop">
-          <p>
-            👩‍💻 Développeuse Front-end et Designer UX/UI passionnée par la création et
-            l'innovation ! Curieuse d'apprendre auprès des autres, je me suis
-            formée en UX et UI pour concevoir des interfaces utilisateurs
-            intuitives. Mon objectif est de créer des expériences fluides et
-            agréables pour les utilisateurs.
-          </p>
-          <p>
-            J'ai également acquis des compétences en conception de maquettes en
-            autodidacte, ce qui me permet de donner vie à mes idées avec
-            créativité et originalité. En plus de ma passion pour le
-            développement, je suis une gameuse acharnée 🎮 et une mélomane
-            passionnée 🎵.
-          </p>
-          <p>
-            J'aime explorer les liens entre le monde du jeu vidéo, de la musique
-            et le développement Front-end. Prête à relever de nouveaux défis et
-            à continuer à apprendre, je suis toujours à l'affût des dernières
-            tendances et technologies. Contactez-moi pour créer ensemble des projets uniques et inspirants ! ✨
-            <i>(Mise à jour en mars 2025)</i>
-          </p>
-        </div>
-
-        <!-- Mobile bio avec toggle -->
-        <div class="biosuite">
-          @if (!isPanelOpen) {
-            <i class='bx bx-chevron-down' (click)="togglePanel()"></i>
-          } @else {
-            <i class='bx bx-chevron-up' (click)="togglePanel()"></i>
-          }
-          <p>
-            👩‍💻 Développeuse Front-end passionnée par la création et
-            l'innovation ! Curieuse d'apprendre auprès des autres, je me suis
-            formée en UX et UI pour concevoir des interfaces utilisateurs
-            intuitives.
-          </p>
-          @if (isPanelOpen) {
-            <div>
-              <p>
-                J'ai également acquis des compétences en conception de maquettes en
-                autodidacte. En plus de ma passion pour le
-                développement, je suis une gameuse acharnée 🎮 et une mélomane
-                passionnée 🎵.
-              </p>
-              <p>
-                Contactez-moi pour créer ensemble des projets uniques et inspirants ! ✨
-              </p>
-            </div>
-          }
-        </div>
-
-        <!-- Réseaux sociaux -->
-        <div class="logo-social">
-          <a target="_blank" class="contour" href="https://github.com/marioncalpe" title="GitHub">
-            <div class="bx bxl-github"></div>
-          </a>
-          <a target="_blank" class="contour" href="https://www.linkedin.com/in/marion-calpena-90a930187" title="LinkedIn">
-            <div class="bx bxl-linkedin-square"></div>
-          </a>
-          <a target="_blank" class="contour" href="https://discordapp.com/users/399935400921137164" title="Discord">
-            <div class="bx bxl-discord"></div>
-          </a>
-          <a class="contour" href="mailto:marioncalpe2a@gmail.com" title="Gmail">
-            <div class="bx bxl-gmail"></div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJETS -->
-    <div class="projet" id="projet">
-      <div class="title">Projets</div>
-      <div class="content-projet">
-
-        <div class="projet">
-          <div class="cadre" (click)="openClassroom($event)">
-            <img src="classroom.png" alt="Creadoc Classroom" />
-            <div class="overlay-projet">
-              <div class="row">
-                <div class="techno-cadre">
-                  <i class="bx bxl-angular"></i>
-                  <i class="bx bxl-typescript"></i>
-                  <i class="bx bxl-sass"></i>
-                  <i class="bx bxl-nodejs"></i>
-                </div>
-                <div class="date">Mai - Juin 2023</div>
-              </div>
-              <div class="name">Creadoc Classroom</div>
-              <div class="icon"><i class="bx bx-link"></i></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="projet">
-          <div class="cadre" (click)="openMonify($event)">
-            <img class="monifyimg" src="monify.png" alt="Monify" />
-            <div class="overlay-projet">
-              <div class="row">
-                <div class="techno-cadre">
-                  <i class="bx bxl-angular"></i>
-                  <i class="bx bxl-typescript"></i>
-                  <i class="bx bxl-sass"></i>
-                  <i class="bx bxl-nodejs"></i>
-                </div>
-                <div class="date">Novembre - Décembre 2023</div>
-              </div>
-              <div class="name">Monify V.1</div>
-              <div class="icon"><i class='bx bxl-github'></i></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="projet">
-          <div class="cadre">
-            <img src="comingsoon.png" alt="Coming Soon" />
-            <div class="overlay-projet">
-              <div class="row"></div>
-              <div class="name">Coming Soon</div>
-              <div class="icon"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="projet">
-          <div class="cadre">
-            <img src="comingsoon.png" alt="Coming Soon" />
-            <div class="overlay-projet">
-              <div class="row"></div>
-              <div class="name">Coming Soon</div>
-              <div class="icon"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- TECHNOLOGIES -->
-    <div class="techno" id="techno">
-      <div class="title-techno">Technologie</div>
-      <div class="content-techno">
-        <div class="technoSolo"><i class="bx bxl-sass"></i><div class="sass">SCSS</div></div>
-        <div class="technoSolo"><i class="bx bxl-angular"></i><div class="angular">Angular</div></div>
-        <div class="technoSolo"><i class="bx bxl-typescript"></i><div class="typescript">TypeScript</div></div>
-        <div class="technoSolo"><i class="bx bxs-coin-stack"></i><div class="mysql">MySQL</div></div>
-        <div class="technoSolo"><i class="bx bxl-javascript"></i><div class="javascript">JavaScript</div></div>
-        <div class="technoSolo"><i class="bx bxl-php"></i><div class="php">Php</div></div>
-        <div class="technoSolo"><i class="bx bxl-git"></i><div class="git">Git</div></div>
-        <div class="technoSolo"><i class="bx bxl-github"></i><div class="github">Github</div></div>
-        <div class="technoSolo"><i class="bx bxl-gitlab"></i><div class="gitlab">Gitlab</div></div>
-        <div class="technoSolo"><i class="bx bxl-trello"></i><div class="trello">Trello</div></div>
-        <div class="technoSolo"><i class="bx bxl-figma"></i><div class="figma">Figma</div></div>
-        <div class="technoSolo"><i class="bx bx-layout"></i><div class="ux">UX/UI</div></div>
-        <div class="technoSolo">
-          <img width="50" height="50" src="https://img.icons8.com/windows/64/agile.png" class="image" alt="Agile" />
-          <div class="agile">Agile</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- EXPÉRIENCES -->
-    <div class="exp" id="exp">
-      <div class="title">Expériences</div>
-      <section id="cd-timeline" class="cd-container">
-
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img cd-picture"></div>
-          <div class="cd-timeline-content">
-            <h2>Freelance chez Com-mentis</h2>
-            <div class="timeline-content-info">
-              <span class="timeline-content-info-title">Designer UX / UI</span>
-              <span class="timeline-content-info-date">Novembre 2023 - Maintenant</span>
-            </div>
-            <ul class="content-skills">
-              <li>Wix</li><li>Wix by vélo</li><li>Gestion client</li><li>Agile</li><li>UX</li><li>UI</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img cd-picture"></div>
-          <div class="cd-timeline-content">
-            <h2>Stagiaire NeuroMediaSoft</h2>
-            <div class="timeline-content-info">
-              <span class="timeline-content-info-title">Développeur Front-end</span>
-              <span class="timeline-content-info-date">Janvier - Juillet 2023</span>
-            </div>
-            <ul class="content-skills">
-              <li>HTML</li><li>CSS</li><li>Angular</li><li>TS</li><li>Agile</li><li>Git</li><li>UX</li><li>UI</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img cd-picture"></div>
-          <div class="cd-timeline-content">
-            <h2>Master Développeur Full Stack</h2>
-            <div class="timeline-content-info">
-              <span class="timeline-content-info-title">Étudiant</span>
-              <span class="timeline-content-info-date">Septembre 2021 - Juin 2023</span>
-            </div>
-            <ul class="content-skills">
-              <li>HTML</li><li>CSS</li><li>TS</li><li>JS</li><li>PHP</li><li>NodeJS</li><li>Agile</li><li>Git</li><li>MySQL</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img cd-picture"></div>
-          <div class="cd-timeline-content">
-            <h2>Licence Ingénieur Parcours Informatique</h2>
-            <div class="timeline-content-info">
-              <span class="timeline-content-info-title">Étudiant</span>
-              <span class="timeline-content-info-date">Septembre 2020 - Juin 2021</span>
-            </div>
-            <ul class="content-skills">
-              <li>HTML</li><li>CSS</li><li>PHP</li><li>Agile</li><li>Git</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img cd-picture"></div>
-          <div class="cd-timeline-content">
-            <h2>BTS SIO option Slam</h2>
-            <div class="timeline-content-info">
-              <span class="timeline-content-info-title">Étudiant</span>
-              <span class="timeline-content-info-date">Septembre 2017 - Juin 2019</span>
-            </div>
-            <ul class="content-skills">
-              <li>HTML</li><li>CSS</li><li>PHP</li><li>CMD</li><li>Git</li><li>Agile</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img cd-picture"></div>
-          <div class="cd-timeline-content">
-            <h2>Stagiaire Ollandini Voyages</h2>
-            <div class="timeline-content-info">
-              <span class="timeline-content-info-title">Développeur Full Stack</span>
-              <span class="timeline-content-info-date">Janvier 2019 - Mars 2019</span>
-            </div>
-            <ul class="content-skills">
-              <li>HTML</li><li>CSS</li><li>JS</li><li>Git</li><li>Agile</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="cd-timeline-block">
-          <div class="cd-timeline-img cd-picture"></div>
-          <div class="cd-timeline-content">
-            <h2>Alternante SAGES Informatique</h2>
-            <div class="timeline-content-info">
-              <span class="timeline-content-info-title">Développeur Full Stack</span>
-              <span class="timeline-content-info-date">Janvier 2018 - Août 2018</span>
-            </div>
-            <ul class="content-skills">
-              <li>HTML</li><li>CSS</li><li>JS</li><li>PHP</li><li>Git</li><li>Agile</li>
-            </ul>
-          </div>
-        </div>
-
-      </section>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="footer">
-      <div>
-        <form [formGroup]="form" (ngSubmit)="send()" class="form">
-          <div class="nameEmail">
-            <div class="field-group">
-              <label for="name">Nom</label>
-              <input formControlName="from_name" type="text" id="name" placeholder="Marion Calpena" />
-            </div>
-            <div class="field-group">
-              <label for="email">Email</label>
-              <input formControlName="from_email" type="email" id="email" placeholder="votremail@mail.com" />
-            </div>
-          </div>
-          <label for="subject">Objet</label>
-          <input formControlName="subject" type="text" id="subject" placeholder="Site web, Design, etc.." />
-          <label for="message">Message</label>
-          <textarea formControlName="message" rows="6" id="message" placeholder="Bonjour. . ."></textarea>
-          <button type="submit">
-            <div class="submit">Envoyer</div>
-          </button>
-        </form>
-      </div>
-      <div class="decoration">
-        <div class="floattext">
-          <div>Une question ?</div>
-          <div class="contact">Contactez moi !</div>
-        </div>
-        <div class="logo-social">
-          <a target="_blank" class="contour" href="https://github.com/marioncalpe" title="GitHub">
-            <div class="bx bxl-github"></div>
-          </a>
-          <a target="_blank" class="contour" href="https://www.linkedin.com/in/marion-calpena-90a930187" title="LinkedIn">
-            <div class="bx bxl-linkedin-square"></div>
-          </a>
-          <a target="_blank" class="contour" href="https://discordapp.com/users/399935400921137164" title="Discord">
-            <div class="bx bxl-discord"></div>
-          </a>
-          <a class="contour" href="mailto:marioncalpe2a@gmail.com" title="Gmail">
-            <div class="bx bxl-gmail"></div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Background décoratif -->
-    <div class="svg">
-      <img src="background2.png" class="backcircuit" alt="" />
-    </div>
-
-    <div class="copyright">© Marion Calpena {{ currentYear }}</div>
-  </div>
-
-  <!-- MODALS -->
-  @if (modal.classroom.status) {
-    <modal [date]="'Mai - Juillet 2023'" (onClose)="modal.classroom.status = false">
-      <div class="head">
-        <div class="titre">Classroom</div>
-        <div class="lienprojet">
-          <i class="bx bxl-angular" title="Angular"></i>
-          <i class="bx bxl-typescript" title="TypeScript"></i>
-          <i class="bx bxl-sass" title="Sass"></i>
-          <i class="bx bxl-nodejs" title="NodeJS"></i>
-          <a href="https://www.creadocforschool.com/fr/" target="_blank">
-            <i class="bx bx-link" title="Creadoc"></i>
-          </a>
-        </div>
-      </div>
-      <div class="pres">
-        La fonctionnalité Classroom de Creadoc for School permet aux enseignants d'intégrer des documents et des fiches
-        qu'ils souhaitent partager avec leurs étudiants. Dans cette première version, les fiches interactives
-        ne sont accessibles qu'avec un code d'authentification spécifique à chaque enseignant.
-      </div>
-      <div class="description">
-        <div class="CDA">
-          <b class="miniTitle">Le cahier des charges :</b>
-          <ul>
-            <li>Maintenir le code "class" pour référencer le bon enseignant tout en introduisant un code personnel unique.</li>
-            <li>Créer deux interfaces distinctes : une pour les enseignants et une pour les étudiants.</li>
-            <li>Permettre la création de groupes ou de classes personnalisés avec sélection des élèves.</li>
-            <li>Offrir la capacité de créer différentes sections au sein de ces groupes.</li>
-            <li>Permettre aux enseignants de visualiser le score de chaque élève sur chaque document.</li>
-            <li>Pour l'interface étudiant, accès aux classes assignées et visualisation des documents.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="illustration">
-        <div>
-          <b class="miniTitle">Interface enseignant</b>
-          <div class="enseignant">
-            <img class="desktopgif" src="DesktopEnseignantClassroom.gif" alt="Interface enseignant desktop" />
-            <img class="mobilegif" src="MobileEnseignantClassroom.gif" alt="Interface enseignant mobile" />
-          </div>
-        </div>
-        <div>
-          <b class="miniTitle">Interface étudiante</b>
-          <div class="student">
-            <img class="desktopgif" src="DesktopStudentClassroom.gif" alt="Interface étudiante desktop" />
-            <img class="mobilegif" src="MobileStudentClassroom.gif" alt="Interface étudiante mobile" />
-          </div>
-        </div>
-      </div>
-    </modal>
-  }
-
-  @if (modal.monify.status) {
-    <modal [date]="'Novembre - Décembre 2023'" (onClose)="modal.monify.status = false">
-      <div class="head">
-        <div class="titre">Monify V.1</div>
-        <div class="lienprojet">
-          <i class="bx bxl-angular" title="Angular"></i>
-          <i class="bx bxl-typescript" title="TypeScript"></i>
-          <i class="bx bxl-sass" title="Sass"></i>
-          <i class="bx bxl-nodejs" title="NodeJS"></i>
-          <a href="https://github.com/Gwe2B/maxe-frontend" target="_blank">
-            <i class="bx bxl-github" title="GitHub"></i>
-          </a>
-        </div>
-      </div>
-      <div class="pres">
-        Monify est un projet né d'une problématique simple : en tant qu'auto-entrepreneur, j'ai dû
-        effectuer des calculs complexes pour mes obligations URSSAF. Aucun outil ne répondait à mes besoins,
-        alors j'ai créé Monify V.1 avec Gwenaël Guiraud, développeur Back-end.
-      </div>
-      <div class="description">
-        <div class="CDA">
-          <b class="miniTitle">Le cahier des charges :</b>
-          <ul>
-            <li>Formulaire avec nom, date, montant, taux de prestation, taux d'impôt et taux de formation.</li>
-            <li>Interface pour visualiser les revenus par mois avec totaux.</li>
-            <li>Représentation graphique des totaux sur une période donnée.</li>
-            <li>Système de login pour la sécurité des données.</li>
-            <li>Menu avec gestion du mot de passe et déconnexion.</li>
-            <li>Application accessible en ligne.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="illustration">
-        <div>
-          <b class="miniTitle">Interface Version 1</b>
-          <div class="enseignant">
-            <img class="desktopgif" src="monify1.gif" alt="Monify V1" />
-          </div>
-        </div>
-      </div>
-    </modal>
-  }
-
+<!-- Orbes de fond -->
+<div class="orbes">
+  <div class="orbe o1"></div>
+  <div class="orbe o2"></div>
+  <div class="orbe o3"></div>
 </div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Mc</a>
+  <ul class="nav-links">
+    <li><a href="#hero">index</a></li>
+    <li><a href="#work">work</a></li>
+    <li><a href="#stack">stack</a></li>
+    <li><a href="#xp">xp</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero-section">
+  <div class="container">
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-counter">01 — intro</div>
+        <div class="hero-name">
+          Marion<br>
+          <span class="g">Calpena</span>
+        </div>
+        <p class="hero-desc">
+          <em>Développeuse Front-end & Designer UX/UI.</em><br>
+          Je construis des interfaces qui ont du caractère — propres dans le code, soignées dans les détails.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn-ghost">voir le travail →</a>
+          <a href="#contact" class="hero-scroll">
+            <div class="scroll-line"></div>
+            contact
+          </a>
+        </div>
+        <!-- <div class="hero-socials">
+          <a href="https://github.com/marioncalpe" target="_blank" title="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/marion-calpena-90a930187" target="_blank" title="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+          <a href="https://discordapp.com/users/399935400921137164" target="_blank" title="Discord"><i class="bx bxl-discord"></i></a>
+          <a href="mailto:marioncalpe2a@gmail.com" title="Gmail"><i class="bx bxl-gmail"></i></a>
+        </div> -->
+      </div>
+      <!-- <div class="hero-status">
+        <div class="status-dot"></div>
+        disponible · 2025
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="work">
+  <div class="container">
+    <div class="s-head">
+      <span class="s-num">02</span>
+      <h2 class="s-title">Work <span class="g">sélectionné</span></h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="projects-list">
+      <div class="project-row" (click)="openClassroom($event)">
+        <div class="proj-num">001</div>
+        <div class="proj-info">
+          <div class="proj-title">Creadoc Classroom</div>
+          <div class="proj-tags">
+            <span class="ptag">Angular</span><span class="ptag">TypeScript</span><span class="ptag">SCSS</span><span class="ptag">NodeJS</span>
+          </div>
+        </div>
+        <div class="proj-meta">Mai — Juin 2023</div>
+        <div class="proj-arrow">↗</div>
+      </div>
+      <div class="project-row" (click)="openMonify($event)">
+        <div class="proj-num">002</div>
+        <div class="proj-info">
+          <div class="proj-title">Monify V.1</div>
+          <div class="proj-tags">
+            <span class="ptag">Angular</span><span class="ptag">TypeScript</span><span class="ptag">SCSS</span><span class="ptag">NodeJS</span>
+          </div>
+        </div>
+        <div class="proj-meta">Nov — Déc 2023</div>
+        <div class="proj-arrow">↗</div>
+      </div>
+      <div class="project-row project-coming">
+        <div class="proj-num">003</div>
+        <div class="proj-info">
+          <div class="proj-title">Prochain projet</div>
+          <div class="proj-tags"><span class="ptag">en cours</span></div>
+        </div>
+        <div class="proj-meta">…</div>
+        <div class="proj-arrow">…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="container">
+    <div class="s-head">
+      <span class="s-num">03</span>
+      <h2 class="s-title">Stack <span class="g">& outils</span></h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="stack-categories">
+      <div class="stack-group">
+        <div class="stack-cat-title">Front-end</div>
+        <div class="stack-chips">
+          <div class="stack-chip"><i class="bx bxl-angular"></i><span>Angular 19</span></div>
+          <div class="stack-chip"><i class="bx bxl-typescript"></i><span>TypeScript</span></div>
+          <div class="stack-chip"><i class="bx bxl-html5"></i><span>HTML5</span></div>
+          <div class="stack-chip"><i class="bx bxl-sass"></i><span>SCSS</span></div>
+          <div class="stack-chip"><i class="bx bxl-javascript"></i><span>JavaScript</span></div>
+          <div class="stack-chip"><i class="bx bxl-php"></i><span>PHP</span></div>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-cat-title">Design & UX</div>
+        <div class="stack-chips">
+          <div class="stack-chip"><i class="bx bxl-figma"></i><span>Figma</span></div>
+          <div class="stack-chip"><i class="bx bx-layout"></i><span>UX/UI Design</span></div>
+          <div class="stack-chip"><i class="bx bx-pencil"></i><span>Wireframing</span></div>
+          <div class="stack-chip"><i class="bx bx-line-chart"></i><span>Prototypage</span></div>
+        </div>
+      </div>
+      <div class="stack-group">
+        <div class="stack-cat-title">Outils</div>
+        <div class="stack-chips">
+          <div class="stack-chip"><i class="bx bxl-git"></i><span>Git</span></div>
+          <div class="stack-chip"><i class="bx bxl-github"></i><span>GitHub</span></div>
+          <div class="stack-chip"><i class="bx bxl-gitlab"></i><span>GitLab</span></div>
+          <div class="stack-chip"><i class="bx bxl-trello"></i><span>Trello</span></div>
+          <div class="stack-chip"><i class="bx bxs-data"></i><span>MySQL</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPÉRIENCES -->
+<section id="xp">
+  <div class="container">
+    <div class="s-head">
+      <span class="s-num">04</span>
+      <h2 class="s-title">Expérience <span class="g">& formation</span></h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="xp-list">
+      <div class="xp-item">
+        <div class="xp-date">Nov 2023 — Mai 2024</div>
+        <div class="xp-sep"></div>
+        <div class="xp-content">
+          <div class="xp-role">Designer UX / UI — Freelance</div>
+          <div class="xp-place">Com-mentis</div>
+          <div class="xp-skills"><span>Wix</span><span>Wix Velo</span><span>Gestion client</span><span>Agile</span><span>UX</span><span>UI</span></div>
+        </div>
+      </div>
+      <div class="xp-item">
+        <div class="xp-date">Jan — Juil 2023</div>
+        <div class="xp-sep"></div>
+        <div class="xp-content">
+          <div class="xp-role">Développeuse Front-end — Stage</div>
+          <div class="xp-place">NeuroMediaSoft</div>
+          <div class="xp-skills"><span>Angular</span><span>TypeScript</span><span>SCSS</span><span>Agile</span><span>Git</span><span>UX/UI</span></div>
+        </div>
+      </div>
+      <div class="xp-item">
+        <div class="xp-date">2021 — 2023</div>
+        <div class="xp-sep"></div>
+        <div class="xp-content">
+          <div class="xp-role">Master Développeur Full Stack</div>
+          <div class="xp-place">Formation</div>
+          <div class="xp-skills"><span>Angular</span><span>TypeScript</span><span>PHP</span><span>NodeJS</span><span>MySQL</span><span>Git</span></div>
+        </div>
+      </div>
+      <div class="xp-item">
+        <div class="xp-date">2020 — 2021</div>
+        <div class="xp-sep"></div>
+        <div class="xp-content">
+          <div class="xp-role">Licence Ingénieur — Informatique</div>
+          <div class="xp-place">Formation</div>
+          <div class="xp-skills"><span>HTML</span><span>CSS</span><span>PHP</span><span>Git</span></div>
+        </div>
+      </div>
+      <div class="xp-item">
+        <div class="xp-date">Jan — Mar 2019</div>
+        <div class="xp-sep"></div>
+        <div class="xp-content">
+          <div class="xp-role">Développeuse Full Stack — Stage</div>
+          <div class="xp-place">Ollandini Voyages</div>
+          <div class="xp-skills"><span>HTML</span><span>CSS</span><span>JS</span><span>Git</span></div>
+        </div>
+      </div>
+      <div class="xp-item">
+        <div class="xp-date">Jan — Août 2018</div>
+        <div class="xp-sep"></div>
+        <div class="xp-content">
+          <div class="xp-role">Développeuse Full Stack — Alternance</div>
+          <div class="xp-place">SAGES Informatique</div>
+          <div class="xp-skills"><span>HTML</span><span>CSS</span><span>JS</span><span>PHP</span><span>Git</span></div>
+        </div>
+      </div>
+      <div class="xp-item">
+        <div class="xp-date">2017 — 2019</div>
+        <div class="xp-sep"></div>
+        <div class="xp-content">
+          <div class="xp-role">BTS SIO option SLAM</div>
+          <div class="xp-place">Formation</div>
+          <div class="xp-skills"><span>HTML</span><span>CSS</span><span>PHP</span><span>Git</span><span>Agile</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="s-head" style="margin-bottom: 32px">
+          <span class="s-num">05</span>
+          <h2 class="s-title">On se <span class="g">parle ?</span></h2>
+        </div>
+        <p class="contact-sub">Portfolio fait pour montrer le travail — si quelque chose t'a plu, je suis là.</p>
+        <div class="contact-links">
+          <a href="mailto:marioncalpe2a@gmail.com" class="clink"><i class="bx bxl-gmail"></i>marioncalpe2a@gmail.com</a>
+          <a href="https://www.linkedin.com/in/marion-calpena-90a930187" target="_blank" class="clink"><i class="bx bxl-linkedin-square"></i>linkedin</a>
+          <a href="https://github.com/marioncalpe" target="_blank" class="clink"><i class="bx bxl-github"></i>github</a>
+          <a href="https://discordapp.com/users/399935400921137164" target="_blank" class="clink"><i class="bx bxl-discord"></i>discord</a>
+        </div>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="send()" class="contact-form">
+        <input class="fi" formControlName="from_name" placeholder="nom" type="text"/>
+        <input class="fi" formControlName="from_email" placeholder="email" type="email"/>
+        <input class="fi" formControlName="subject" placeholder="objet" type="text"/>
+        <textarea class="ft" formControlName="message" placeholder="message…" rows="5"></textarea>
+        <button type="submit" class="btn-send">ENVOYER →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-copy">Marion <span>Calpena</span> · {{ currentYear }}</div>
+  <div class="foot-copy">Angular 19 · SCSS · <span>Pixel Art</span></div>
+</footer>
+
+<!-- MODALS -->
+@if (modal.classroom.status) {
+  <app-modal [date]="'Mai — Juin 2023'" (onClose)="modal.classroom.status = false">
+    <ng-container modal-title>Creadoc Classroom</ng-container>
+    <ng-container modal-techs>
+      <i class="bx bxl-angular" title="Angular"></i>
+      <i class="bx bxl-typescript" title="TypeScript"></i>
+      <i class="bx bxl-sass" title="Sass"></i>
+      <i class="bx bxl-nodejs" title="NodeJS"></i>
+      <a href="https://www.creadocforschool.com/fr/" target="_blank"><i class="bx bx-link" title="Lien"></i></a>
+    </ng-container>
+    <ng-container modal-body>
+      <p class="modal-intro">
+        La fonctionnalité Classroom de Creadoc for School permet aux enseignants d'intégrer des documents
+        et des fiches à partager avec leurs étudiants, accessibles via un code d'authentification unique.
+      </p>
+      <div class="modal-section">
+        <div class="modal-section-title">Cahier des charges</div>
+        <ul class="modal-list">
+          <li>Maintenir le code « class » tout en introduisant un code personnel unique par enseignant.</li>
+          <li>Deux interfaces distinctes : enseignants et étudiants.</li>
+          <li>Création de groupes/classes personnalisés avec sélection des élèves.</li>
+          <li>Création de sections au sein de ces groupes.</li>
+          <li>Visualisation du score de chaque élève par document.</li>
+          <li>Interface étudiant : accès aux classes assignées et aux documents.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Interface enseignant</div>
+        <div class="modal-gifs">
+          <img src="DesktopEnseignantClassroom.gif" alt="Interface enseignant desktop"/>
+          <img src="MobileEnseignantClassroom.gif" alt="Interface enseignant mobile"/>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Interface étudiante</div>
+        <div class="modal-gifs">
+          <img src="DesktopStudentClassroom.gif" alt="Interface étudiante desktop"/>
+          <img src="MobileStudentClassroom.gif" alt="Interface étudiante mobile"/>
+        </div>
+      </div>
+    </ng-container>
+  </app-modal>
+}
+
+@if (modal.monify.status) {
+  <app-modal [date]="'Nov — Déc 2023'" (onClose)="modal.monify.status = false">
+    <ng-container modal-title>Monify V.1</ng-container>
+    <ng-container modal-techs>
+      <i class="bx bxl-angular" title="Angular"></i>
+      <i class="bx bxl-typescript" title="TypeScript"></i>
+      <i class="bx bxl-sass" title="Sass"></i>
+      <i class="bx bxl-nodejs" title="NodeJS"></i>
+      <a href="https://github.com/Gwe2B/maxe-frontend" target="_blank"><i class="bx bxl-github" title="GitHub"></i></a>
+    </ng-container>
+    <ng-container modal-body>
+      <p class="modal-intro">
+        Monify est né d'un besoin personnel : en tant qu'auto-entrepreneuse, les calculs URSSAF
+        étaient complexes et aucun outil n'y répondait. Créé avec Gwenaël Guiraud (Back-end).
+      </p>
+      <div class="modal-section">
+        <div class="modal-section-title">Cahier des charges</div>
+        <ul class="modal-list">
+          <li>Formulaire avec nom, date, montant, taux de prestation, taux d'impôt et formation.</li>
+          <li>Visualisation des revenus par mois avec totaux.</li>
+          <li>Représentation graphique des totaux sur une période donnée.</li>
+          <li>Système de login pour la sécurité des données.</li>
+          <li>Menu avec gestion du mot de passe et déconnexion.</li>
+          <li>Application accessible en ligne.</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Interface V.1</div>
+        <div class="modal-gifs">
+          <img src="monify1.gif" alt="Monify V1"/>
+        </div>
+      </div>
+    </ng-container>
+  </app-modal>
+}
